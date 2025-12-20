@@ -1,0 +1,130 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+<meta charset='utf-8' />
+<title>Canaux d'irrigation des ASA de la Bléone</title>
+<link rel="stylesheet" href="reseau_bleone.css"> <!-- J'appelle mon fichier CSS dans le même dossier -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+<header>
+<a href='https://iut.univ-amu.fr/fr/formations/licences-professionnelles-desu/lp-cartographie-topographie-systemes-information-geographique'><img src='logo_amu.png' alt='logo_amu' class='logo_amu'></a>
+</header>
+<h1>Canaux d'irrigation des ASA de la Bléone</h1>
+<main>
+<section>
+
+<!-- Initialisation du plugin Geocoder-->
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+<div id='map' class='map'></div>
+
+<!-- Création du menu de sélection des couches et fonds de plan -->
+
+<div class='map-overlay-2 top'>
+	<div class='map-overlay-inner'>
+
+    <fieldset><label class="categoryLabel">LP SIG HACKATON 2025</label>
+
+			<div>
+    			<input type="checkbox" id="bleoneCB" value="bleone" onchange="switchlayer('bleone')"/> 
+    			<label for="bleoneCB">Canaux d'irrigation</label>
+    		</div>
+			<div>
+				<input type="checkbox" id="asaCB" value="asa" onchange="switchlayer('asa')"/> 
+				<label for="asaCB">ASA de la Bléone</label>
+			</div>
+			<div>
+				<input type="checkbox" id="route-bleueCB" value="route-bleue" onchange="switchlayer('route-bleue')"/>
+    			<label for="route-bleueCB">Sentiers touristiques</label>
+    		</div>
+    		<div>
+    			<input type="checkbox" id="itineraireCB" value="itineraire" onchange="switchlayer('itineraire')"/>
+    			<label for="itineraireCB">Itinéraires PDIPR</label>
+    			</div>
+    </fieldset>
+
+	<fieldset><label class="categoryLabel">Equipements</label>
+
+			<div>
+                <input type="checkbox" id="siphCB" value="siph" onchange="switchlayer('siph')"/>
+                <label for="siphCB">Siphon</label>
+            </div> 
+			<div>
+                <input type="checkbox" id="reglCB" value="regl" onchange="switchlayer('regl')"/>
+                <label for="reglCB">Règle</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partCB" value="part" onchange="switchlayer('part')"/>
+                <label for="partCB">Partiteur</label>
+            </div>
+		    <div>
+                <input type="checkbox" id="pompCB" value="pomp" onchange="switchlayer('pomp')"/>
+                <label for="pompCB">Pompe</label>
+            </div>  
+			<div>
+                <input type="checkbox" id="martCB" value="mart" onchange="switchlayer('mart')"/>
+                <label for="martCB">Martelière</label>
+            </div>
+			<div>
+        		<input type="checkbox" id="degCB" value="deg" onchange="switchlayer('deg')"/>
+        		<label for="degCB">Dégrilleur</label>
+      		</div>
+			<div>
+				<input type="checkbox" id="aqCB" value="aq" onchange="switchlayer('aq')"/>
+				<label for="aqCB">Aqueduc</label>
+			</div>
+
+    </fieldset>
+
+    <fieldset><label class="categoryLabel">Topographie</label>
+
+			<div>
+    			<input type="checkbox" id="RPGCB" value="RPG" onchange="switchlayer('RPG')"/>
+    			<label for="RPGCB">Occupation du sol</label>
+    		</div>
+    		<div>
+    			<input type="checkbox" id="hydrologieCB" value="hydrologie" onchange="switchlayer('hydrologie')"/>
+    			<label for="hydrologieCB">Hydrologie</label>
+    		</div>
+    		<div>
+    			<input type="checkbox" id="Batiments_3DCB" value="Batiments_3D" onchange="switchlayer('Batiments_3D')"/>
+    			<label for="Batiments_3DCB">Bâtiments 3D</label>
+    		</div>
+    </fieldset>
+
+
+	<fieldset><legend class="legend">Fond de plan</legend>
+
+			<div id="basemap-control" class="basemap-control legend">
+				<select id="basemap-select">
+					<option value="mapbox://styles/mapbox/streets-v11" selected>Streets</option>
+					<option value="mapbox://styles/mapbox/outdoors-v11">Outdoors</option>
+					<option value="mapbox://styles/mapbox/dark-v10">Dark</option>
+					<option value="mapbox://styles/mapbox/satellite-v9">Satellite</option>
+				</select>
+			</div>
+	</fieldset>
+
+	</div>
+</div>
+
+</section>
+	</main>
+	
+	
+
+	<footer>
+		<a href="mailto:agathe.martinet@univ-amu.fr">Agathe MARTINET</a>
+	</footer>
+</footer>
+
+    <script src="reseau_bleone.js"></script>
+</body>
+</html>
