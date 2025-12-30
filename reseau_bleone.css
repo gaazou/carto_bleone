@@ -1,86 +1,113 @@
+/* =========================
+   CARTE
+   ========================= */
 
-
-#map
-{
-width: 1500px;
-height: 650px;
-margin: auto;
-/*margin: auto;*/
+#map {
+  width: 100%;
+  height: 100vh;      /* Occupe toute la hauteur de l’écran */
+  margin: 0;
+  padding: 0;
 }
+
+
+/* =========================
+   PANNEAU DE COUCHES
+   ========================= */
 
 .map-overlay-2 {
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-            position: absolute;
-            width: 200px;
-            top: 160px;
-            right: 210px; /*Je place en haut à droite la check box */
-            padding: 10px;
-        }
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  position: absolute;
+  width: 220px;
+  top: 20px;
+  right: 20px;        /* Toujours collé au bord droit */
+  padding: 10px;
+  z-index: 1;         /* Passe au-dessus de la carte */
+}
 
 .map-overlay-2 .map-overlay-inner {
-            background-color: #ffffff;
-            box-shadow:0 1px 2px rgba(0, 0, 0, 0.849);
-            border-radius: 3px;
-            padding: 5px;
-            margin-bottom: 5px;
-        }
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
 
 .map-overlay-inner fieldset {
-            border: none;
-            padding: 0;
-            margin: 0 0 10px;
-        }
+  border: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
 
 .map-overlay-inner .categoryLabel {
-            display: block;
-            font-weight: bold;
-            margin: 0px 0 5px;
-        }
+  display: block;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
 
 
-.logo_amu
-{
+/* =========================
+   RESPONSIVE MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+  .map-overlay-2 {
+    width: 90%;
+    left: 5%;
+    right: auto;
+    top: 10px;
+  }
+}
+
+
+/* =========================
+   LOGO & TITRES
+   ========================= */
+
+.logo_amu {
   width: 120px;
+  max-width: 100%;
 }
 
-h1
-{
-color : rgb(0, 0, 0);
-text-align: center;
-}
-
-u
-{
-color: red;
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
 
- /* J'ajoute un effet d'opacité au survol du logo de l'IUT et du titre */
-img:hover, h1:hover
-{
-opacity:0.5;
+/* =========================
+   STYLES GÉNÉRAUX
+   ========================= */
+
+u {
+  color: red;
 }
 
-/* J'ajoute un effet de couleur rose au survol de mon nom et prénom au bas de la page */
-
-footer:hover
-{
-text-decoration: underline;
-background-color: pink;	
+/* Effet d’opacité au survol */
+img:hover,
+h1:hover {
+  opacity: 0.5;
 }
 
-p, footer /* J'applique les marges intérieures (padding) et les marges extérieures (margin) aux deux balises à la fois */
-
-{
-padding: 10px;
-margin: 30px;	
+/* Effet sur le footer */
+footer:hover {
+  text-decoration: underline;
+  background-color: pink;
 }
 
- 
+p,
+footer {
+  padding: 10px;
+  margin: 30px;
+}
+
+
+/* =========================
+   POPUP IMAGE (CARTE 3D)
+   ========================= */
+
 #popup-image {
-  max-width: 300px; /*  J'ajuste la taille de l'image à afficher dans la carte 3D */
-  max-height: 300px; /* J'ajuste la taille de l'image à afficher dans la carte 3D */
+  max-width: 300px;
+  max-height: 300px;
   width: auto;
   height: auto;
 }
-
