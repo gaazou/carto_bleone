@@ -4,9 +4,9 @@
 
 #map {
   width: 100%;
-  height: 100vh;      /* Occupe toute la hauteur de l’écran */
-  margin: 0;
-  padding: 0;
+  height: 100vh;
+  position: relative; 
+  overflow: hidden; 
 }
 
 
@@ -15,33 +15,33 @@
    ========================= */
 
 .map-overlay-2 {
-  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   position: absolute;
-  width: 220px;
-  top: 20px;
-  right: 20px;        /* Toujours collé au bord droit */
-  padding: 10px;
-  z-index: 1;         /* Passe au-dessus de la carte */
+  top: 15px;
+  right: 15px;
+  width: 230px;
+  font: 12px/18px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  z-index: 10;
 }
 
-.map-overlay-2 .map-overlay-inner {
+.map-overlay-inner {
   background-color: #ffffff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
-  border-radius: 3px;
-  padding: 5px;
-  margin-bottom: 5px;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
 }
 
-.map-overlay-inner fieldset {
+fieldset {
   border: none;
+  margin-bottom: 12px;
   padding: 0;
-  margin: 0 0 10px;
 }
 
-.map-overlay-inner .categoryLabel {
+.categoryLabel {
   display: block;
   font-weight: bold;
-  margin: 0 0 5px;
+  margin-bottom: 6px;
 }
 
 
@@ -54,13 +54,12 @@
     width: 90%;
     left: 5%;
     right: auto;
-    top: 10px;
   }
 }
 
 
 /* =========================
-   LOGO & TITRES
+   HEADER / TEXTE
    ========================= */
 
 .logo_amu {
@@ -69,26 +68,24 @@
 }
 
 h1 {
-  color: rgb(0, 0, 0);
   text-align: center;
+  color: #000;
 }
-
-
-/* =========================
-   STYLES GÉNÉRAUX
-   ========================= */
 
 u {
   color: red;
 }
 
-/* Effet d’opacité au survol */
+
+/* =========================
+   EFFETS
+   ========================= */
+
 img:hover,
 h1:hover {
   opacity: 0.5;
 }
 
-/* Effet sur le footer */
 footer:hover {
   text-decoration: underline;
   background-color: pink;
@@ -102,7 +99,7 @@ footer {
 
 
 /* =========================
-   POPUP IMAGE (CARTE 3D)
+   POPUP IMAGE
    ========================= */
 
 #popup-image {
